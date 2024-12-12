@@ -17,7 +17,7 @@ Interceptor.attach(aesIgeDecryptRaw_addr, {
   },
 
   onLeave: function (result) {
-    console.log(hexdump(this.a1, { length: this.numBytes, ansi: true }));
+    console.log("RECV: " + hexdump(this.a1, { length: this.numBytes, ansi: true }));
     console.log("[+] " + aesIgeDecryptRaw_addr + " returned:", result.toInt32());
   }
 });
@@ -35,7 +35,7 @@ Interceptor.attach(CRYPTO_ctr128_encrypt_addr, {
     this.a0 = args[0];
     var numBytes = args[2].toInt32();
 
-    console.log(hexdump(this.a0, { length: numBytes, ansi: true }));
+    console.log("SEND: " + hexdump(this.a0, { length: numBytes, ansi: true }));
   },
 
   onLeave: function (result) {
