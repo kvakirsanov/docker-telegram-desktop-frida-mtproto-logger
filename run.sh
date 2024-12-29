@@ -7,7 +7,7 @@ set -euo pipefail
 # Load configuration
 source .config
 
-FRIDA_SCRIPT=display-mtproto-data.js
+FRIDA_SCRIPT=display-crypto-buffers.js
 
 cleanup() {
     echo "Cleaning up..."

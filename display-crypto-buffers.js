@@ -21,6 +21,13 @@ function preview(data, len)
 Interceptor.attach(aesIgeDecryptRaw_addr, {
   onEnter: function (args) {
 //    console.log("[+] " + aesIgeDecryptRaw_addr + " called");
+    console.log("[+] " + aesIgeDecryptRaw_addr + " called");
+    for(var i=0; i < 6; i++)
+      console.log("arg[" + i + "] : " + args[i]);
+
+//    console.log("KEY:          " + hexdump(args[3], 32).trim());
+//    console.log("IV:           " + hexdump(args[4], 32).trim());
+
     this.buf = args[1];
     this.numBytes = args[2].toInt32();
   },
@@ -30,7 +37,7 @@ Interceptor.attach(aesIgeDecryptRaw_addr, {
     else
       console.log("RECV <=        " + preview(this.buf, this.numBytes).trim());
 
-//    console.log("[+] " + aesIgeDecryptRaw_addr + " returned:", result.toInt32());
+    console.log("[+] " + aesIgeDecryptRaw_addr + " returned:", result.toInt32());
   }
 });
 
