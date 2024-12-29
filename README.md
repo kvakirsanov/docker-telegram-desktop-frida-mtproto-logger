@@ -2,7 +2,7 @@
 
 ## Description & Purpose
 
-This project runs Telegram Desktop inside a Docker container and intercepts cryptographic buffers using Frida. It captures raw binary data prior to encryption (on sending) and after decryption (on receiving), facilitating deep analysis and debugging of the MTProto cryptographic protocol. Specifically, the following functions are hooked:
+This project runs Telegram Desktop inside a Docker container (https://github.com/kvakirsanov/docker-telegram-desktop) and intercepts cryptographic buffers using Frida. It captures raw binary data prior to encryption (on sending) and after decryption (on receiving), facilitating deep analysis and debugging of the MTProto cryptographic protocol. Specifically, the following functions are hooked:
 
 - **aesIgeDecryptRaw**
 - **CRYPTO_ctr128_encrypt**
