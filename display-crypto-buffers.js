@@ -4,7 +4,10 @@ var baseAddress = Module.findBaseAddress(moduleName);
 console.log("[+] Base address:", baseAddress);
 
 // --------------------------------------------------------------------------------------------------
+// https://github.com/telegramdesktop/tdesktop/blob/4505a2bf2dbb73185b4bb8b18b2aab721765bb7e/Telegram/SourceFiles/mtproto/mtproto_auth_key.cpp#L161
 var aesIgeDecryptRaw_addr = baseAddress.add("0x678c620"); // 0x678c620 - aesIgeDecryptRaw addr in 5.9.0
+
+// https://github.com/telegramdesktop/tdesktop/blob/4505a2bf2dbb73185b4bb8b18b2aab721765bb7e/Telegram/SourceFiles/mtproto/mtproto_auth_key.cpp#L178
 var CRYPTO_ctr128_encrypt_addr = baseAddress.add("0x678c850"); // 0x678c850 - CRYPTO_ctr128_encrypt addr in 5.9.0
 
 console.log("[+] aesIgeDecryptRaw address:", aesIgeDecryptRaw_addr);
