@@ -11,7 +11,7 @@ Upon invocation, the script logs both unencrypted and encrypted data, providing 
 
 ## Usage
 
-1. Configure the `.config` file with appropriate environment variables (e.g., `TAG`, paths, etc.).  
+1. Install Frida (`pip install frida-tools` for example).
 2. Build the Docker image:
    ```bash
    ./build.sh
